@@ -1,0 +1,63 @@
+
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#navbar li {
+    float: left;
+}
+
+#navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#navbar li a:hover:not(.active) {
+    background-color: #111;
+}
+footer{
+	border-top: 1px solid red;
+	margin:0px;
+	background: black;
+}
+#left, #right{
+	display: inline;
+	color: red;
+	background-color: black;
+}
+#left{
+	float: left;
+	width: 50%;
+	height: 120px;
+}
+#right{
+	float: right;
+	width: 50%;
+	height: 120px;
+}
+#search {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('../../front/images/homepage/searchicon.png');
+    background-position: 1px 1px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+    vertical-align: middle;
+    background-size: contain;
+}
+
+#search:focus {
+    width: 100%;
+}

@@ -1,0 +1,157 @@
+/*---body--*/
+
+
+
+textarea{
+overflow:auto;
+}
+
+   
+#body{
+  
+
+    background-color:whitesmoke;
+    display:block;
+    margin-left:10%;
+    margin-right:10%;
+  
+}
+#body:after{
+    clear:both;
+    content:"";
+    display:block;
+}
+/*sidebar-content*/
+    
+   
+
+
+#content{
+    width:600px;
+    height: 100%;
+    float:left;
+    margin-left:px;
+
+
+}
+#sidebar-right{
+    width:299px;
+    height:100%;
+    float:left;
+    margin-right:0px;
+    text-align: center;
+
+}
+
+#content img{
+     width:131px;
+     height:131px;
+}
+.item{
+    float:left;
+    padding:9px;
+    position:relative;
+    -webkit-transition:all .3s ease-in;
+
+}
+.contentitem{
+    position: absolute;
+    left: 40px;
+    top:70px;
+}
+.contentitem a{
+    color:whitesmoke;
+    transform:scale(0);
+    opacity:0;
+    -webkit-transition:all .3s ease-in;
+}
+.item:hover a{
+    transform:scale(1);
+    opacity:1;
+}
+
+.tabcontent img{
+    width:300px;
+    height:126px;
+    width:100%;
+}
+#toptrack{
+
+       border-right: 0px solid lightgrey;
+    height: 43px;
+}
+#tabtrack { height:100%;}
+#tabtrack li{
+    float:left;
+    border-left:1px solid lightgrey;
+    font-weight: bold;
+    padding:10px;
+    width:33.33%;
+    background-color:#999999;
+    overflow:hidden;
+    margin-top: -3px 1px 1px 1px;
+    -webkit-transition:all .3s ease-in;
+}
+#tabtrack li.active{
+    border-bottom:1px solid lightgrey;
+}
+
+#tabtrack li:hover{
+    background-color:lightgrey ;
+    opacity:.65!important;
+}
+.toplist{
+    position:relative;
+
+}
+
+
+.contenttrack{
+    position:absolute;
+    top:75px;
+    left:0;
+    z-index:1;
+    color:whitesmoke;
+    width:100%;
+    height:30%;
+    
+}
+.numberrank{
+    width:15%;
+    float:left;
+    height:100%;
+    font-size:20px;
+    font-weight:bold;
+}
+.contenttrack2{
+    float:left;
+
+}
+.icon-circle-play{
+    position:absolute;
+    top:30%;
+    left:40%;
+    opacity:0;
+    transform:scale(0);
+    -webkit-transition:all .3s ease-in;
+    
+    
+
+}
+.toplist img{-webkit-transition:all .3s ease-in;
+width:200px;
+height:200px;
+
+}
+.toplist:hover .icon-circle-play{
+    opacity:1;
+    transform:scale(1);
+}
+.toplist:hover img{
+    opacity:.65!important;
+}
+
+
+       
+
+

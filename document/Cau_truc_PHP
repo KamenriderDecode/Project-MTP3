@@ -1,0 +1,36 @@
+Link day du, mng doc de hieu ve hoat dong cua web php nhe.
+http://sinhvienit.net/forum/tung-buoc-hoc-lap-trinh-php-co-ban-qua-du-an-website-gioi-thieu-san-pham.346823.html
+
+Cấu trúc thư mục website mà tôi đưa ra như sau:
+
+admin
+configs
+extends
+libraries
+models
+views
+-----admin
+-----front
+templates
+-----admin
+-----front
+userfiles
+
+Trong đó:
+
+- admin: Chứa các file xử lý của trang quản trị.
+- configs: Chứa các file cấu hình website.
+- extends: Chứa các thành phần mở rộng (Editor, player...).
+- libraries: Chứa thư viện cần thiết để lập trình.
+- models: Chứa các file xử lý tương tác với DB (Lấy dữ liệu, thêm mới, chỉnh sửa, xóa...).
+- views: Chứa các file giao diện HTML của website. Tôi chia thành hai nhóm là admin (Trang quản trị) và front (Trang người dùng).
+- templates: Chứa các file CSS, JS, hình ảnh... Tôi cũng chia làm hai nhóm là admin và front.
+- userfiles: Chứa các file do người dùng tải lên.
+
+Mỗi trang của ứng dụng web tôi đã chia thành ba phần như sau:
+
+- Trang xử lý: Chứa mã lệnh PHP xử lý các yêu cầu từ người dùng và trả kết quả lại cho người dùng.
+- Model: Thành phần tương tác trực tiếp với DB. Mỗi bảng dữ liệu trong DB tôi sẽ có một file tương ứng trùng tên với bảng dữ liệu đó và đặt trong thư mục models để người lập trình dễ kiểm soát.
+- View: Thành phần giao diện HTML của website. Thành phần này sẽ nhận kết quả trả lại từ trang xử lý để trình bày dữ liệu đó theo giao diện HTML đã thiết kế.
+
+Với cấu trúc như trên, tôi đã tách tối đa phần mã lệnh PHP với mã lệnh HTML để giúp mã lệnh website trở nên trong sáng hơn, dễ bảo trì, nâng cấp hơn.﻿

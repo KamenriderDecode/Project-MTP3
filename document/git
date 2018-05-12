@@ -1,0 +1,151 @@
+add ssh key:
+https://help.github.com/articles/error-permission-denied-publickey/#should-the-sudo-command-be-used-with-git
+
+http://blog.appconus.com/2015/08/06/tao-ssh-key-va-su-dung-ssh-key-trong-git/
+
+SSH?
+
+SSH(Secure Shell) là một giao thức mạng dùng để thiết lập kết nối mạng một cách bảo mật.
+Khi làm việc với git, ssh sẽ giúp ta trong 2 việc:
+1. Bảo mật các kết nối của mình với server.
+2. Không phải nhập mật khẩu mỗi lần push code.
+
+Cơ chế làm việc
+
+Bạn sẽ có 2 key: public key và private key. Bạn sẽ gửi public key của mình cho git server của bạn (bitbucket hay github chẳng hạn). Xong, ssh-agent sẽ làm tất cả những việc còn lại cho bạn. Mỗi lần bạn push, ssh-agent sẽ tự gửi kèm các thông tin chứng thực đi, github sẽ nhận diện ra bạn, và bạn không cần phải nhập mật khẩu nữa.
+Mình giải thích một cách đơn giản nhất có thể, còn nếu bạn muốn tìm hiểu sâu hơn về cơ chế bên trong, vui lòng đọc trang wiki mà mình đưa ở đầu bài
+
+Sinh SSH key
+
+Bước 1: Kiểm tra xem máy bạn có ssh key nào chưa
+
+Mở cửa sổ dòng lệnh (terminal) và chạy lệnh:
+
+
+ls -al ~/.ssh
+
+1
+2
+ls -al ~/.ssh
+ 
+Lệnh trên sẽ kiểm tra trong thư mục .ssh (nằm ở thư mục gốc của user bạn đang đăng nhập vào máy, vd trên Mac: /Users/binhcq/.ssh) có ssh key nào chưa, mặc định, các ssh key thường sẽ có dạng:
+
+
+id_rsa
+id_rsa.pub
+id_dsa.pub
+id_ecdsa.pub
+id_ed25519.pub
+
+1
+2
+3
+4
+5
+6
+id_rsa
+id_rsa.pub
+id_dsa.pub
+id_ecdsa.pub
+id_ed25519.pub
+ 
+public key sẽ có đuôi .pub (id_rsa.pub), private key thì không có đuôi (id_rsa)
+Nếu có một cặp ssh key nào trong thư mục này (giả sử là id_rsa và id_rsa.pub), bạn có thể bỏ qua Bước 2 và chuyển thẳng sang Bước 3.
+
+Bước 2: Sinh một SSH key mới
+
+Chạy lệnh sau trên terminal
+
+ssh-keygen -t rsa -b 4096 -C "email_cua_ban@example.com"
+
+ 
+Để tránh phiền phức sau này, mình khuyên bạn nên để các cài đặt ở mặc định, như lần này, ssh-agent hỏi bạn muốn lưu key của mình ở đâu thì bạn cứ thế mà Enter thôi:
+
+Enter file in which to save the key (/Users/binhcq/.ssh/id_rsa): [Press enter]
+
+
+Tiếp đến thì nhập mật khẩu cho key của bạn ( ĐÂY LÀ PASS UNLOCK)
+
+Enter passphrase (empty for no passphrase): [Type a passphrase]
+# Enter same passphrase again: [Type passphrase again]
+
+Lưu ý mật khẩu khi bạn gõ vào nó sẽ không hiển thị mấy dấu ******* như bình thường, nhưng bạn cứ gõ xong rồi Enter thôi. Thêm nữa, bạn nên chọn một mật khẩu ĐỦ MẠNH cho mình, bạn có thể xem thêm lý do tại đây
+* Sau khi nhập mật khẩu, bạn sẽ nhận được thông báo về việc mật khẩu đã lưu vào địa chỉ lúc nãy bạn chỉ định:
+
+
+Your identification has been saved in /Users/you/.ssh/id_rsa.
+# Your public key has been saved in /Users/you/.ssh/id_rsa.pub.
+# The key fingerprint is:
+# 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db email_cua_ban@example.com
+
+ 
+Bước 3: Thêm key của bạn vào ssh-agent
+
+ssh-agent là trình quản lý ssh key của bạn, công việc của nó thì nãy mình có nói qua ở trên rồi đó.
+* Đảm bảo rằng ssh-agent đã được kích hoạt bằng lệnh:
+
+
+eval "$(ssh-agent -s)"
+# Agent pid 59566
+
+Add ssh key của bạn vào ssh-agent
+
+ssh-add ~/.ssh/id_rsa
+
+Lưu ý id_rsa chính là private key của bạn, nếu ở bước 2, bạn có key khác thì thay tên key tương ứng vào.
+
+Bước 4: Thêm ssh public key vào tài khoản trên server của bạn (github, bitbucket…)
+
+
+Mở và Copy ssh key vào clipboard:
+
+
+cat ~/.ssh/id_rsa.pub
+
+note: copy tu phần ssh-rsa... đến hết
+Sau đó lên tài khoản của bạn, vào mục setting, tìm tới mục Add ssh key và dán nội dung đã copy lúc nãy vào:
+Screen Shot 2015-08-06 at 10.52.07 PM
+
+Bước 5: Kiếm tra lại xem mọi thứ đã OK chưa:
+
+Với gitlab thì là ssh -T git@gitlab.com 
+Với github thì là ssh -T git@github.com
+
+Có thể bạn sẽ nhận được thông báo về việc thêm host bitbucket vào danh sách tin cậy:
+
+
+The authenticity of host 'bitbucket.org (207.97.227.239)' can't be established.
+# RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+# Are you sure you want to continue connecting (yes/no)?
+
+1
+2
+3
+4
+The authenticity of host 'bitbucket.org (207.97.227.239)' can't be established.
+# RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+# Are you sure you want to continue connecting (yes/no)?
+ 
+Bạn chỉ việc gõ yes vào terminal rồi Enter là được.
+Và bạn sẽ nhận được dòng thông báo thành công:
+
+
+logged in as CaoQuangBinh.
+
+1
+2
+logged in as CaoQuangBinh.
+ 
+Hoặc github:
+
+
+Hi BinhCQ! You've successfully authenticated, but GitHub does not
+# provide shell access.
+
+1
+2
+3
+Hi BinhCQ! You've successfully authenticated, but GitHub does not
+# provide shell access.
+ 
+OK, đến đây là bạn đã có thể sử dụng link ssh rồi.

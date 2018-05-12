@@ -1,0 +1,156 @@
+/*#navbar a {
+	color: #fff;
+	font-family: LeagueGothic, sans-serif;
+	text-decoration: none;
+	font-size: 1.5em;
+	margin-left: 25px;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 0px #000;
+	display: inline-block;
+}
+
+#navbar table{
+	margin: 20px 4px 0 0;
+	float: left;
+}
+header{
+	margin-bottom: 25px;
+}
+#cover{
+	width: 100%;
+	border: 2px solid green;
+	background-image: src="cover.jpg";
+
+}*/
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#navbar li {
+    float: left;
+}
+
+#navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#navbar li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+.headline{
+	color: red;
+}
+#cover{
+	background-image: url("../../front/images/homepage/banner.jpg");
+	background-size: contain;
+	background-repeat: round;
+	width: 100%;
+	height: 300px;
+}
+article{
+	display: inline-block;
+	width:20%;
+	vertical-align: top;
+	margin: 0 38px 0 0;
+	background: white;
+	border-radius: 25px;
+	cursor: pointer;
+}
+article:hover{
+	display: inline-block;
+	width:20%;
+	vertical-align: top;
+	margin: 0 38px 0 0;
+	background: #C492F4;
+	border-radius: 25px;
+}
+footer{
+	border-top: 1px solid red;
+	margin: 20px 0 0 0;
+	background: black;
+}
+#left, #right{
+	display: inline;
+	color: red;
+	background-color: black;
+}
+#left{
+	float: left;
+	width: 50%;
+	height: 120px;
+}
+#right{
+	float: right;
+	width: 50%;
+	height: 120px;
+}
+.playbutton{
+	width: 75px;
+	height: 45px;
+	background-color: white;
+	color: blue;
+	transition-duration: 0.4s;
+	border: 2px solid green;
+	cursor: pointer;
+}
+.playbutton:hover{
+	width: 75px;
+	height: 45px;
+	background-color: blue;
+	color: white;
+	border: 2px solid green
+}
+#main{
+	width: 70%;
+	display: inline-block;
+}
+#sidebar{
+	width: 15%;
+	display: inline-block;
+	vertical-align: top;
+	margin:0px 0 0px 30px;
+	background: gray;
+	border-radius: 25px;
+}
+#mid{
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+
+}
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('../../front/images/homepage/searchicon.png');
+    background-position: 1px 1px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+    vertical-align: middle;
+    background-size: contain;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+.ava{
+	width:90%;
+	margin-left: 5%;
+}

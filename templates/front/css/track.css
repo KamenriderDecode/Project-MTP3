@@ -1,0 +1,129 @@
+#content{
+   margin:auto;
+   display:block;
+   background-color:#F1F1F1;
+   font-size:13px;
+     font-family: "YouTube Noto",Roboto,arial,sans-serif;
+}
+#comments{
+    background-color:#fff;
+    padding:15px;
+    width:600px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    border-radius: 4px;
+    margin:auto;
+}
+#getcomments textarea{
+   resize: none;
+    width: 485px;
+    height: 64px;
+}
+#getcomments{ position:relative; margin-bottom:80px;}
+#submit{
+        right: 109px;
+    top: 74px;
+    position: absolute;
+    background-color: #167ac6;
+    color: #fff;
+    border: solid 1px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 92px;
+    height: 39px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.historycomments{
+    position:relative;
+    padding:4px;
+    margin:0px 108px 30px 30px;
+    border:solid 1px rgb(241,241,241);
+    box-shadow:0 1px 2px rgba(0,0,0,0.05);
+}
+.historycomments a{
+    color:#128ee9;
+    
+
+}
+.historycomments span{
+    font-size:11px;
+    margin-left:4px;
+}
+.editsubmit{    top: 0px;
+    right: -100px;
+    position: absolute;}
+.editsubmit1{
+    font-size:11px;
+    background-color: #167ac6;
+    color: #fff;
+    border: solid 1px;
+    cursor: pointer;
+    border-radius: 4px;
+        width: 60px;
+    height: 30px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.deletesubmit{
+   top: 36px;
+    right: -100px;
+    position: absolute;
+
+}
+.deletesubmit1{
+    font-size: 11px;
+    background-color: #3C3F45;
+    color: #fff;
+    border: solid 1px;
+    cursor: pointer;
+    border-radius: 4px;
+        width: 60px;
+    height: 30px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+#icon{
+    box-sizing: border-box;
+    display:initial;
+	width: 60px;
+	height: 60px;
+}
+.track_info{
+	position: relative;
+	left: 10px;
+}
+#track_2{
+	width: 385px;
+	height: 1200px;
+	float: right;
+	background-color:white;
+}
+.noo{
+	width: 100%
+}
+.noo>p{
+	font-size: 22px;
+}
+tr{
+	width: 100%;
+	height: 70px;
+}
+td{
+	border-bottom: 1px solid #ffffff;
+	text-height: 45px;
+}
+table{
+	border-collapse: collapse;
+	width: 100%
+}
+td:hover{
+	background-color: #888888;
+}
+#fr{
+	margin-right: 130px;
+    float:right;
+}
+#song{
+    margin:0px 314px;
+}
+#media-player{
+    margin:auto;
+}

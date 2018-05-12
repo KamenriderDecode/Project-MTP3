@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mtp3-Music.com</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../../templates/front/css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		/*function changeBG(){
+			imageID=0;
+			if (imageID==0){
+				document.getElementById("mid").style.backgroundImage="url(images/maxresdefault.jpg)";
+				imageID++;
+			}
+			if (imageID==1){
+				document.getElementById("mid").style.backgroundImage="url(images/image1.jpg)";
+				imageID++;
+			}
+			if (imageID==2){
+				document.getElementById("mid").style.backgroundImage="url(images/image2.jpg)";
+				imageID==0;
+			}
+			
+
+		}
+		setInterval(changeBG(),3000);*/
+		var bgImg = 1;
+
+		//runs every second
+		window.setInterval(function(){
+		    yourFunction();
+		}, 10000);
+
+		//changes background image
+		function   yourFunction () {
+		  ++bgImg;
+
+		  if(bgImg === 4){
+		    bgImg = 1;
+		  }
+
+		  if(bgImg === 1){
+		    $('#mid').css("background-image","URL('../../templates/front/images/homepage/maxresdefault.jpg')");
+		  }
+
+		  if(bgImg === 2){
+		    $('#mid').css("background-image","URL('../../templates/front/images/homepage/image1.jpg')");
+		  }
+
+		  if(bgImg === 3){
+		    $('#mid').css("background-image","URL('../../templates/front/images/homepage/image2.jpg')");
+		  }        
+}
+	</script>
+</head>
+<body onload="yourFunction()">
+
+	<div id="navbar">
+		 <ul>
+			<li><a href="#" >Trang chủ</a></li>
+			<li><a href="#" >US-UK</a></li>
+			<li><a href="#" >K-Pop</a></li>
+			<li><a href="#">J-Pop</a></li>
+			<li><a href="#">V-Pop</a></li>
+			<li><a href="#">Thể Loại</a></li>
+			<li><a href="#">Nghệ Sĩ</a></li>
+			<li><a href="#">Cá nhân</a></li>
+			<li><a href="#">Đăng nhập</a></li>
+			<li><a href="#">Đăng ký</a></li>
+			<li><input type="text" name="search" placeholder="Search.."></li>
+		</ul>		 
+	</div>
+	<div id="cover" >
+	</div>
+	<section id="mid">
+	<section id="main">
+		<div id="line">
+					<h1 class="headline">Mới nhất</h1>
+
+				</div>
+				<div id="thoisu" style="border-top: 2px solid orange">
+					<article >
+						<h1>Lạc Trôi</h1>
+						<img src="../../templates/front/images/homepage/1.jpg" alt="#" />
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>Sơn Tùng Mtp</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+					<article>
+						<h1>Lạc Rang</h1>
+						<img src="../../templates/front/images/homepage/2.jpg" alt="#" />
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>Sơn Hà Mtp</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+					<article >
+						<h1>Lạc Luộc</h1>
+						<img src="../../templates/front/images/homepage/3.jpg" alt="#" />						
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>Sơn Dương Mtp</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+					<article class="lastarticle">
+						<h1>Lạc Hầm</h1>
+						<img src="../../templates/front/images/homepage/3.jpg" alt="#" />
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>Sơn Cường Mtp</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+				</div>
+				<div id="sline" style="border-top: 2px solid orange;margin-top: 20px">
+					<h1 class="headline">Nổi nhất</h1>
+				</div>
+				<div id="vanhoa">
+					<article>
+						<h1>Lạc Nướng</h1>
+						<img src="../../templates/front/images/homepage/1s.jpg" alt="" />
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>Sơn Thuyết Mtp</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+					<article>
+						<h1>Lạc Xào</h1>
+						<img src="../../templates/front/images/homepage/2s.jpg" alt="" />
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>Sơn Phương Mtp</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+					<article>
+						<h1>Lạc Áp Chảo</h1>
+						<img src="../../templates/front/images/homepage/3s.jpg" alt="" />
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>Sơn Long Mtp</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+					<article class="lastarticle">
+						<h1>Lạc Lõng</h1>
+						<img src="../../templates/front/images/homepage/4s.jpg" alt="" />
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>Sơn Tường Mtp</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+				</div>
+				<div id="sline" style="border-top: 2px solid orange;margin-top: 20px">
+					<h1 class="headline">Âu Mỹ</h1>
+				</div>
+				<div id="vanhoa">
+					<article>
+						<h1>We don't Thuộc về nhau Anymore</h1>
+						<img src="../../templates/front/images/homepage/1s.jpg" alt="" />
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>Friedrich Engel</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+					<article>
+						<h1>Chicken Attack</h1>
+						<img src="../../templates/front/images/homepage/2s.jpg" alt="" />
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>Huynh đệ Gregory</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+					<article>
+						<h1>What Child is this</h1>
+						<img src="../../templates/front/images/homepage/3s.jpg" alt="" />
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>Various artitst</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+					<article class="lastarticle">
+						<h1>The Longest Time</h1>
+						<img src="../../templates/front/images/homepage/4s.jpg" alt="" />
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>Billy Joel</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+				</div>
+				<div id="sline" style="border-top: 2px solid orange;margin-top: 20px">
+					<h1 class="headline">K-Pop</h1>
+				</div>
+				<div id="vanhoa">
+					<article>
+						<h1>Haru Haru</h1>
+						<img src="../../templates/front/images/homepage/1s.jpg" alt="" />
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>Big Boom</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+					<article>
+						<h1>Paradise</h1>
+						<img src="../../templates/front/images/homepage/2s.jpg" alt="" />
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>T-MAX</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+					<article>
+						<h1>Because I'm stupid</h1>
+						<img src="../../templates/front/images/homepage/3s.jpg" alt="" />
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>SS501</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+					<article class="lastarticle">
+						<h1>Gangnam Style</h1>
+						<img src="../../templates/front/images/homepage/4s.jpg" alt="" />
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>PSY</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+				</div>
+				<div id="sline" style="border-top: 2px solid orange;margin-top: 20px">
+					<h1 class="headline">J-POP</h1>
+				</div>
+				<div id="vanhoa">
+					<article>
+						<h1>Nandemonaiya</h1>
+						<img src="../../templates/front/images/homepage/1s.jpg" alt="" />
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>RADWIMPS</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+					<article>
+						<h1>Zen Zen Zense</h1>
+						<img src="../../templates/front/images/homepage/2s.jpg" alt="" />
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>RADWIMPS</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+					<article>
+						<h1>No.1</h1>
+						<img src="../../templates/front/images/homepage/3s.jpg" alt="" />
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>Kana Nishino</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+					<article class="lastarticle">
+						<h1>Torisetsu(cover)</h1>
+						<img src="../../templates/front/images/homepage/4s.jpg" alt="" />
+						<p>Thể loại:</p><a href="#">Pop, Rock Ballad</a>
+						<h5>Kobasolo&Leftyhand Cream</h5>
+						<input type="button" value="Nghe" onclick="location.href='#' " class="playbutton">
+					</article>
+				</div>
+	</section>
+	<div id="sidebar">
+				<aside>
+					<h1>Top Bài Hát trong tuần</h1>
+					<ul>
+						<li><a href="#">Chicken Attack</a></li>
+						<li><a href="#">Apple Pen</a></li>
+						<li><a href="#">Zen Zen Zense</a></li>
+						<li><a href="#">Lạc Trôi</a></li>	
+						<li><a href="#">The Longest Time</a></li>
+						<li><a href="#">Lạc Rang</a></li>
+						<li><a href="#">Lạc Luộc</a></li>
+						<li><a href="#">Lạc Nướng</a></li>			
+						<li><a href="#">No.1</a></li>
+						<li><a href="#">Fuck it. Out of Ideas</a></li>
+							
+					</ul>
+				</aside>
+	</div>
+	</section>
+	<footer>
+		<div id="left">
+			<p><strong>NHÓM 10-PROJECT MTP3 MUSIC </strong></p>
+			<p>Giấy phép số 69JAV</p>
+			<p></p>
+		</div>
+		<div id="right">
+			<p>Trụ sở : phòng 401, nhà A1</p>
+			<p>ĐT:093067508</p>
+			<p>email:<strong>phsonha@gmail.com</strong></p>
+		</div>
+	</footer>
+</body>
+</html>

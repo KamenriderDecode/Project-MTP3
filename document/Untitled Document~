@@ -1,0 +1,86 @@
+﻿1/ require,require_once,include,include_once:
+Trong PHP chức năng gọi file được thực hiện thông qua 4 câu lệnh sau đây:
+- inculde
+- include_once
+- require
+- require_once
+Tất cả cùng có nhiệm vụ gọi một file khác vào làm việc vậy sự khác nhau giữa chúng là gì, chúng ta tìm hiểu ngay sau đây.
+Gọi file với include, require
+
+Câu lệnh include (hoặc require) dùng để lấy tất cả nội dung bao gồm text, code, và các thẻ của một file(nếu tồn tại ) vào file người dùng sử dụng hàm include.
+Gọi file nó rất hữu ích trong việc chúng ta cần gọi cùng một nội dung Php của nhiều file khác nhau của website.
+
+Với hai câu lệnh này về chức năng hoàn toàn tương đồng nhau. Nhưng nó chỉ khác khi thông báo lỗi.
+- require sẽ sinh ra lỗi và dừng chạy chương trình
+- include sẽ sinh ra cảnh báo và vẫn chạy chương trình
+Trong thực tế người ta vẫn hay sử dụng require hơn để đảm bảo tính thông suốt của hệ thống. Khi có lỗi liên quan đến gọi file thì sẽ dừng chương trình và mình cần phải xử lý ngay.
+Ví dụ
+Ta có file fileA.php
+<?php
+echo "File A</br>";
+?>
+ 
+Và ở file index.php ta sử dụng câu lệnh gọi file(cùng cấp với fileA.php)
+<?php
+  include 'fileA.php';
+?>
+Kết quả khi chạy file index.php
+file A
+Nếu sử dụng require câu lệnh như sau
+<?php
+  require'fileA.php';
+?>
+Tuy nhiên khi sử dụng include hoặc require để gọi cùng một file nhiều lần thì kết quả nội dung được gọi sẽ gom nhiều lần ở file gọi
+<?php
+  require'fileA.php';
+  require'fileA.php';
+?>
+Kết quả chúng ta có
+file A
+file A
+Gọi file với include_once và require_once
+
+Tương tự những tính chất về tính năng của include và require, chức năng là gọi file và tính chất báo lỗi khi chạy chương trình. 
+Điểm khác biệt là sử dụng include hoặc require có thể gọi một file nhiều lần và nó cũng gộp file nhiều lần. Còn với include_once hoặc require_one thì hoàn toàn khác, việc gọi file chỉ được gọi nhiều nhất một lần khi hai câu lệnh này kiểm tra xem file được gọi đã được gọi vào trước đó hay chưa. Nếu đã được gọi rồi thì công việc đó không được lặp lại thêm bất kỳ một lần nào nữa
+Với hai câu lệnh này có lợi thế tránh được việc người  lập trình vô tình gọi nhiều lần một nội dung trong khi bản chất vấn đề là chỉ gọi một lần
+Như ví dụ trên ta sử dụng như sau
+<?php
+  require'fileA.php';
+  require_once'fileA.php';
+?>
+Hoặc
+<?php
+  require_once 'fileA.php';
+  require_once 'fileA.php';
+?>
+ 
+Kết quả ta có hoàn toàn như nhau
+file A
+ 
+Kiểm tra đường dẫn tồn tại trước khi require
+
+Trong thực tế để đảm bảo việc gộm file được diễn ra suôn sẻ và không hiện tượng cảnh báo hoặc đan đoạn chương trình trong php sử dụng hàm file_exists() để kiểm tra việc tồn tại của đường dẫn trước khi thực hiện gọi file.
+<?php
+  $path = "fileA.php";
+  if(file_exists($path)){
+     require $path;
+  }else{
+     die("{$path} không tồn tại");
+  }
+?>
+ 
+Kết luận
+Thông qua định nghĩa và ứng dụng của của từng câu lệnh một chúng ta có thể lựa chọn cho mình một cách thích hợp nhất. 
+Trên thực tế với các FW hoặc CMS người ta vẫn chuộng sử dụng require hơn
+Khi sử dụng gộp file đừng quên sử dụng hàm file_exists() để đảm bảo không làm gián đoạn hệ thống
+
+
+Cách sửa CONFLICT(modify/delete):
+Bản chất của conflict này là trên branch HEAD khác với máy mình ở nội dung của 1 số file,
+link đến các file này luôn được nêu trên thông báo: 
+CONFLICT (modify/delete): models/connect.php deleted in HEAD and modified in sdf            . Version sdf of models/connect.php left in tree.
+models/connect.php là link đến file chứa conflict 
+đến đây ta có hai lựa chọn: giữ lại bản trên HEAD hoặc giữ bản của mình
+nếu giữ bản trên HEAD: git add <link đến file>
+nếu dùng bản của mình: git rm <link đến file> để xóa file trên HEAD trước
+sau đó add, commit và push bản của mình lên

@@ -1,0 +1,18 @@
+.clearfix:after {
+    content: ".";
+    visibility: hidden;
+    display: block; 
+    clear: both;
+}
+*{
+    box-sizing: border-box;
+    margin:0px;
+   font-family: "Roboto","segoe ui",Helvetica,Arial,sans-serif;
+    list-style:none;
+    text-decoration: none;
+    padding:0px; 
+   
+
+
+}
+

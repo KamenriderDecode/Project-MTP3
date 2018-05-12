@@ -1,0 +1,65 @@
+.page_body{
+    margin: 0 auto;
+}
+.reg_header{
+	background-color: #42A3D6;
+	background-image: url("../../front/images/homepage/logo.png");
+	background-repeat: no-repeat;
+	background-position: left;
+	background-size: contain;
+	height:50px;
+
+}
+
+.i_zing{
+	padding-left: 80px;
+}
+.reg_body{
+
+	width: 450px;
+    margin: 0 auto;
+}
+.reg_form{
+	position: relative;
+	padding: 10px 20px 15px;
+    border: 1px solid 
+	margin: auto;
+	background-color: #F3F3F3
+
+}
+.requiredfield_icn{
+	color: red
+}
+.reg_main{
+	margin: auto;
+}
+
+#mail{
+	width: 100%;
+	height: 5%;
+}
+#username{
+	width: 100%;
+	height: 5%;
+}
+#password{
+	width: 100%;
+	height: 5%;
+}
+#repassword{
+	width: 100%;
+	height: 5%;
+}
+
+
+.zid_regbtn{
+	border: 5px,5px,5px,5px
+	padding: right;
+	background-color: #42A3D6
+}
+.otherAcountLogin{
+	margin:auto;
+}
+.otherLogin{
+	margin: auto;
+}
